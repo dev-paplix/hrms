@@ -6,7 +6,7 @@ const API_BASE_URL = 'http://localhost:8080';
 const Auth = {
     async userLogin(email, password) {
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/app_auth/`, {
+            const response = await axios.post(`${API_BASE_URL}/api/users/`, {
                 email,
                 password,
             }, {
@@ -31,7 +31,7 @@ const Auth = {
     async userReg(email, password, username) {
 
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/register/`, {
+            const response = await axios.post(`${API_BASE_URL}/api/users/`, {
                 email,
                 password,
                 username,

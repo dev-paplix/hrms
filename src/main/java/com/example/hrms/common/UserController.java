@@ -14,28 +14,33 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
+    // Get all users
+    @GetMapping("/")
     public List<Users> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    @PostMapping
+    // Create a new user
+    @PostMapping("/")
     public Users createUser(@RequestBody Users user) {
         return userService.createUser(user);
     }
 
+    // Get a user by ID
     @GetMapping("/{id}")
     public ResponseEntity<Users> getUserById(@PathVariable Long id) {
         Optional<Users> user = userService.getUserById(id);
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Update a user
     @PutMapping("/{id}")
     public ResponseEntity<Users> updateUser(@PathVariable Long id, @RequestBody Users userDetails) {
         Users updatedUser = userService.updateUser(id, userDetails);
         return ResponseEntity.ok(updatedUser);
     }
 
+    // Delete a user
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);

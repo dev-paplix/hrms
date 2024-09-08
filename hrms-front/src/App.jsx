@@ -5,7 +5,7 @@ import Departement from './screens/Departement';
 import Employee from './screens/Employee';
 import Hr from './screens/Hr';
 import Login from './screens/Login';
-import Payroll from './screens/payroll';
+import Payroll from './screens/Payroll';
 const App = () => {
 
 

@@ -39,4 +39,11 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+    // UserService.java
+    public Optional<Users> authenticateUser(String email, String password) {
+    // You should use a proper password hashing mechanism in a real application
+        return userRepository.findByEmailAndPassword(email, password);  
+    }
+
 }
