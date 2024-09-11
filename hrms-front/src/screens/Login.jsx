@@ -1,4 +1,3 @@
-// screens/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -14,7 +13,7 @@ const Login = () => {
 
     try {
       // Send POST request to backend for authentication
-      const response = await axios.post('/api/users/login', { email, password });
+      const response = await axios.post('http://localhost:8080/api/users/login', { email, password });
 
       // Check if login was successful and get user role
       const { role } = response.data;

@@ -40,10 +40,8 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    // UserService.java
+    // Authenticate user by email and password
     public Optional<Users> authenticateUser(String email, String password) {
-    // You should use a proper password hashing mechanism in a real application
-        return userRepository.findByEmailAndPassword(email, password);  
+        return userRepository.findByEmailAndPassword(email, password);
     }
-
 }
